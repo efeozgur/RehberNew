@@ -30,6 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbox = new System.Windows.Forms.GroupBox();
+            this.tbGorevYeri = new System.Windows.Forms.ComboBox();
+            this.tbUnvani = new System.Windows.Forms.ComboBox();
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnAramaModu = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
@@ -53,8 +55,7 @@
             this.rdUnvani = new System.Windows.Forms.RadioButton();
             this.rdSoyadi = new System.Windows.Forms.RadioButton();
             this.rdAdi = new System.Windows.Forms.RadioButton();
-            this.tbUnvani = new System.Windows.Forms.ComboBox();
-            this.tbGorevYeri = new System.Windows.Forms.ComboBox();
+            this.btnIptal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -71,6 +72,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(801, 390);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // gbox
@@ -81,6 +83,7 @@
             this.gbox.Controls.Add(this.btnKapat);
             this.gbox.Controls.Add(this.btnAramaModu);
             this.gbox.Controls.Add(this.btnSil);
+            this.gbox.Controls.Add(this.btnIptal);
             this.gbox.Controls.Add(this.btnGuncelle);
             this.gbox.Controls.Add(this.btnEkle);
             this.gbox.Controls.Add(this.label6);
@@ -100,6 +103,22 @@
             this.gbox.TabIndex = 1;
             this.gbox.TabStop = false;
             this.gbox.Text = "Kayıt İşlemleri";
+            // 
+            // tbGorevYeri
+            // 
+            this.tbGorevYeri.FormattingEnabled = true;
+            this.tbGorevYeri.Location = new System.Drawing.Point(101, 158);
+            this.tbGorevYeri.Name = "tbGorevYeri";
+            this.tbGorevYeri.Size = new System.Drawing.Size(167, 21);
+            this.tbGorevYeri.TabIndex = 5;
+            // 
+            // tbUnvani
+            // 
+            this.tbUnvani.FormattingEnabled = true;
+            this.tbUnvani.Location = new System.Drawing.Point(101, 79);
+            this.tbUnvani.Name = "tbUnvani";
+            this.tbUnvani.Size = new System.Drawing.Size(167, 21);
+            this.tbUnvani.TabIndex = 2;
             // 
             // btnKapat
             // 
@@ -326,21 +345,16 @@
             this.rdAdi.Text = "Ada Göre";
             this.rdAdi.UseVisualStyleBackColor = true;
             // 
-            // tbUnvani
+            // btnIptal
             // 
-            this.tbUnvani.FormattingEnabled = true;
-            this.tbUnvani.Location = new System.Drawing.Point(101, 79);
-            this.tbUnvani.Name = "tbUnvani";
-            this.tbUnvani.Size = new System.Drawing.Size(167, 21);
-            this.tbUnvani.TabIndex = 2;
-            // 
-            // tbGorevYeri
-            // 
-            this.tbGorevYeri.FormattingEnabled = true;
-            this.tbGorevYeri.Location = new System.Drawing.Point(101, 158);
-            this.tbGorevYeri.Name = "tbGorevYeri";
-            this.tbGorevYeri.Size = new System.Drawing.Size(167, 21);
-            this.tbGorevYeri.TabIndex = 5;
+            this.btnIptal.Location = new System.Drawing.Point(429, 76);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(116, 44);
+            this.btnIptal.TabIndex = 7;
+            this.btnIptal.Text = "İptal Et";
+            this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnIptal.Visible = false;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // Form1
             // 
@@ -394,6 +408,7 @@
         private System.Windows.Forms.TextBox tbfadsoyad;
         private System.Windows.Forms.ComboBox tbUnvani;
         private System.Windows.Forms.ComboBox tbGorevYeri;
+        private System.Windows.Forms.Button btnIptal;
     }
 }
 

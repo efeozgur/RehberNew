@@ -163,6 +163,7 @@ namespace Rehber
                 btnSil.Enabled = false;
                 btnKapat.Enabled = false;
                 btnAramaModu.Enabled = false;
+                btnIptal.Visible = true;
             }
 
 
@@ -192,6 +193,23 @@ namespace Rehber
 
             MessageBox.Show("Kayıt Güncellendi");
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnIptal_Click(object sender, EventArgs e)
+        {
+            btnGuncelle.Enabled = false;
+            btnEkle.Enabled = true;
+            btnSil.Enabled = true;
+            btnKapat.Enabled = true;
+            btnAramaModu.Enabled = true;
+            btnIptal.Visible = false;
+            Control[] controls = { tbAdi, tbSoyadi, tbCepTelefonu, tbDahiliNo, tbGorevYeri, tbUnvani };
+            temizle(controls);
         }
     }
 }
